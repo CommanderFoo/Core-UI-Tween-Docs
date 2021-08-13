@@ -3,6 +3,10 @@ local UI_Tween = require(script:GetCustomProperty("UI_Tween"))
 local panel = script:GetCustomProperty("panel"):WaitForObject()
 local image = script:GetCustomProperty("image"):WaitForObject()
 local text = script:GetCustomProperty("text"):WaitForObject()
+local scroll = script:GetCustomProperty("scroll"):WaitForObject()
+local progress = script:GetCustomProperty("progress"):WaitForObject()
+local color = script:GetCustomProperty("color")
+local button = script:GetCustomProperty("button"):WaitForObject()
 
 local curve = script:GetCustomProperty("curve")
 
@@ -17,4 +21,18 @@ local curve = script:GetCustomProperty("curve")
 --UI_Tween.move_x(panel, 400, 1, UI_Tween.In_Back)
 --UI_Tween.shadow(image, 15, 15, .5, curve).wait(.5).shadow_x(image, -30, .5, curve).pulse(image, 1, -1).wait(1).shadow_x(image, 30, 1, curve).shadow_x(image, -30, 1, curve).rotate(image, 360, 1)
 
-UI_Tween.pulse(text, 50)
+UI_Tween.button_color(button, button:GetButtonColor(), Color.BLACK, 1, UI_Tween.In_Out_Bounce, {
+
+	start = function()
+		print("Started")
+	end,
+
+	change = function()
+		print("Changing")
+	end,
+
+	complete = function()
+		print("Complete")
+	end
+
+})
