@@ -39,14 +39,6 @@ function UI_Tween.delay(t)
 	return UI_Tween
 end
 
-function UI_Tween.can_use_alpha(obj)
-	if(obj.type == "UIImage" or obj.type == "UIText") then
-		return true
-	end
-
-	return false
-end
-
 function UI_Tween.get_ease(easing, dt, duration, start, to)
 	easing = easing or UI_Tween.Linear
 
@@ -67,9 +59,13 @@ function UI_Tween.fade(obj, from, to, duration, easing)
 	duration = duration or 0
 
 	local ticker = Ticker:new()
-	local use_alpha = UI_Tween.can_use_alpha(obj)
 	local color = nil
 	local start = from
+	local use_alpha = false
+
+	if(obj.type == "UIImage" or obj.type == "UIText") then
+		use_alpha = true
+	end
 
 	if(use_alpha) then
 		color = obj:GetColor()
@@ -269,6 +265,32 @@ function UI_Tween.shadow(obj, x_offset, y_offset, duration, easing)
 	return UI_Tween
 end
 
+function UI_Tween.text_size(obj, size, duration, easing)
+	if(not Object.IsValid(obj)) then
+		return
+	end
+
+	local ticker = Ticker:new()
+
+	duration = duration or 0
+
+	local start_size = obj.fontSize
+	local to_size = start_size + (size or 0)
+
+	ticker:tick(function(dt)
+		if(dt < duration) then
+			obj.fontSize = math.floor(UI_Tween.get_ease(easing, dt, duration, start_size, to_size))
+		else
+			ticker:cancel()
+			ticker = nil
+			
+			obj.fontSize = to_size
+		end
+	end)
+
+	return UI_Tween
+end
+
 function UI_Tween.fade_out(obj, duration, easing)
 	return UI_Tween.fade(obj, 1, 0, duration, easing)
 end
@@ -309,13 +331,24 @@ function UI_Tween.shadow_y(obj, y_offset, duration, curve)
 	return UI_Tween.shadow(obj, nil, y_offset, duration, curve)
 end
 
-function UI_Tween.pulse(obj, duration, count, curve)
+function UI_Tween.pulse(obj, size, duration, count, curve)
 	duration = duration or 1
-
+	count = count or -1
+	
 	local t = Task.Spawn(function()
-		UI_Tween.scale(obj, 20, 20, duration / 2, curve or UI_Tween.Out_Sine)
-		Task.Wait(duration / 2)
-		UI_Tween.scale(obj, -20, -20, duration / 2, curve or UI_Tween.Out_Sine)
+		if(obj.type == "UIText") then
+			size = size or 5
+
+			UI_Tween.text_size(obj, size, duration / 2, curve or UI_Tween.Out_Sine)
+			Task.Wait(duration / 2)
+			UI_Tween.text_size(obj, -size, duration / 2, curve or UI_Tween.Out_Sine)
+		else
+			size = size or 20
+
+			UI_Tween.scale(obj, size, size, duration / 2, curve or UI_Tween.Out_Sine)
+			Task.Wait(duration / 2)
+			UI_Tween.scale(obj, -size, -size, duration / 2, curve or UI_Tween.Out_Sine)
+		end
 	end)
 
 	if(count) then
@@ -326,13 +359,23 @@ function UI_Tween.pulse(obj, duration, count, curve)
 	return UI_Tween
 end
 
-function UI_Tween.punch(obj, duration, size, curve)
+function UI_Tween.punch(obj, size, duration, curve)
 	duration = duration or 1
 
 	Task.Spawn(function()
-		UI_Tween.scale(obj, size, size, duration / 2, curve or UI_Tween.In_Quint)
-		Task.Wait(duration / 2)
-		UI_Tween.scale(obj, -size, -size, duration / 2, curve or UI_Tween.In_Quint)
+		if(obj.type == "UIText") then
+			size = size or 5
+
+			UI_Tween.text_size(obj, size, duration / 2, curve or UI_Tween.In_Quint)
+			Task.Wait(duration / 2)
+			UI_Tween.text_size(obj, -size, duration / 2, curve or UI_Tween.In_Quint)
+		else
+			size = size or 20
+
+			UI_Tween.scale(obj, size, size, duration / 2, curve or UI_Tween.In_Quint)
+			Task.Wait(duration / 2)
+			UI_Tween.scale(obj, -size, -size, duration / 2, curve or UI_Tween.In_Quint)
+		end
 	end)
 
 	return UI_Tween

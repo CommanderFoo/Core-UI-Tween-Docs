@@ -85,18 +85,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:panel"
-      ObjectReference {
-        SelfId: 2345876193010489527
-      }
-    }
-    Overrides {
-      Name: "cs:image"
-      ObjectReference {
-        SelfId: 2132956192116704380
-      }
-    }
-    Overrides {
       Name: "cs:curve"
       SimpleCurve {
         Keys {
@@ -152,6 +140,24 @@ Objects {
         DefaultValue: 3.40282347e+38
       }
     }
+    Overrides {
+      Name: "cs:panel"
+      ObjectReference {
+        SelfId: 2345876193010489527
+      }
+    }
+    Overrides {
+      Name: "cs:image"
+      ObjectReference {
+        SelfId: 2132956192116704380
+      }
+    }
+    Overrides {
+      Name: "cs:text"
+      ObjectReference {
+        SelfId: 540537674529253079
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -187,6 +193,7 @@ Objects {
   }
   ParentId: 16568055827786036536
   ChildIds: 2345876193010489527
+  ChildIds: 540537674529253079
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -234,6 +241,82 @@ Objects {
   }
 }
 Objects {
+  Id: 540537674529253079
+  Name: "UI Text Box"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1043517673599384855
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 200
+    Height: 138
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "Text"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 77
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      Font {
+        Id: 16024848337611644089
+      }
+      VerticalJustification {
+        Value: "mc:everticaljustification:top"
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      OutlineColor {
+        A: 1
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+}
+Objects {
   Id: 2345876193010489527
   Name: "UI Panel"
   Transform {
@@ -264,6 +347,7 @@ Objects {
   Control {
     Width: 200
     Height: 200
+    UIY: -227.971054
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"

@@ -17,6 +17,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16024848337611644089
+  Name: "Teko Bold"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "TekoBold_ref"
+  }
+}
+Assets {
   Id: 12095835209017042614
   Name: "Cube"
   PlatformAssetType: 1
