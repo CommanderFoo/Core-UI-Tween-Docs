@@ -1,3 +1,8 @@
+-- This is UI_Tween API.
+-- This is not documented because you should not need to 
+-- modify anything in here unless you really know what you
+-- are doing.
+
 local Ticker = {}
 
 function Ticker:tick(fn)
