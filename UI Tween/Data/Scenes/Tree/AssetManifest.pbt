@@ -1,28 +1,10 @@
 Assets {
-  Id: 17101473860273100276
-  Name: "Icon Health"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "Icon_Health"
-  }
-}
-Assets {
   Id: 16910278292812118833
   Name: "Sun Light"
   PlatformAssetType: 6
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "CORESKY_SunLight"
-  }
-}
-Assets {
-  Id: 16024848337611644089
-  Name: "Teko Bold"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "TekoBold_ref"
   }
 }
 Assets {
@@ -50,5 +32,14 @@ Assets {
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "CORESKY_Sky"
+  }
+}
+Assets {
+  Id: 1757426906703431891
+  Name: "Artificial Grass 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_grass_artificial_001_uv_ref"
   }
 }

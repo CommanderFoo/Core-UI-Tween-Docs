@@ -27,18 +27,6 @@ end
 
 local UI_Tween = require(script:GetCustomProperty("UI_Tween_Easings"))
 
-function UI_Tween.wait(t)
-	Task.Wait(t)
-
-	return UI_Tween
-end
-
-function UI_Tween.delay(t)
-	Task.Wait(t)
-
-	return UI_Tween
-end
-
 function UI_Tween.get_ease(easing, dt, duration, start, to)
 	easing = easing or UI_Tween.Linear
 
@@ -531,11 +519,11 @@ function UI_Tween.button_disabled_color(obj, from, to, duration, easing, events)
 end
 
 function UI_Tween.fade_out(obj, duration, easing, events)
-	return UI_Tween.fade(obj, 1, 0, duration, easing, events)
+	return UI_Tween.fade(obj, 1, 0, duration or 1, easing, events)
 end
 
 function UI_Tween.fade_in(obj, duration, easing, events)
-	return UI_Tween.fade(obj, 0, 1, duration, easing)
+	return UI_Tween.fade(obj, 0, 1, duration or 1, easing, events)
 end
 
 function UI_Tween.move_x(obj, x_distance, duration, easing, events)
@@ -583,9 +571,9 @@ function UI_Tween.pulse(obj, size, duration, count, easing, events)
 		if(obj.type == "UIText") then
 			size = size or 5
 
-			UI_Tween.text_size(obj, size, duration / 2, easing or UI_Tween.Out_Sine, { change = events.change })
+			UI_Tween.font_size(obj, size, duration / 2, easing or UI_Tween.Out_Sine, { change = events.change })
 			Task.Wait(duration / 2)
-			UI_Tween.text_size(obj, -size, duration / 2, easing or UI_Tween.Out_Sine, { change = events.change, complete = events.complete })
+			UI_Tween.font_size(obj, -size, duration / 2, easing or UI_Tween.Out_Sine, { change = events.change, complete = events.complete })
 		else
 			size = size or 20
 
@@ -630,6 +618,37 @@ function UI_Tween.punch(obj, size, duration, easing, events)
 	return UI_Tween
 end
 
+function UI_Tween.write(obj, text, speed, events)
+	if(not Object.IsValid(obj) or text == nil) then
+		return
+	end
+
+	speed = speed or 0.1
+	events = events or {}
+
+	Task.Spawn(function()
+		if(events.start ~= nil) then
+			events.start(obj, text)
+		end
+
+		for i = 1, string.len(text) do
+			local txt = string.sub(text, 1, i)
+
+			obj.text = txt
+					
+			if(events.change ~= nil) then
+				events.change(obj, txt)
+			end
+
+			Task.Wait(speed)
+		end
+
+		if(events.complete ~= nil) then
+			events.complete(obj)
+		end
+	end)
+end
+
 function UI_Tween.slide_right(obj, distance, duration, easing, events)
 	return UI_Tween.move_x(obj, distance, duration, easing, events)
 end
@@ -644,6 +663,10 @@ end
 
 function UI_Tween.slide_down(obj, distance, duration, easing, events)
 	return UI_Tween.move_y(obj, distance, duration, easing, events)
+end
+
+function UI_Tween.slide_in(obj, distance, duration, easing, events)
+	return UI_Tween.move_x(obj, distance, duration, easing, events)
 end
 
 return UI_Tween
