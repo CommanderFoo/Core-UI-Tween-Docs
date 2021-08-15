@@ -126,7 +126,7 @@ end)
 
 -- Function calls
 
---[[
+-- [[
 show_abilities()
 show_hud()
 show_banner()
@@ -136,7 +136,7 @@ show_collectables()
 --]]
 
 -- Below is used for testing, ignore.
--- [[
+--[[
 local_player.bindingPressedEvent:Connect(function(_, binding)
 	if(binding == "ability_extra_17") then
 		show_abilities()

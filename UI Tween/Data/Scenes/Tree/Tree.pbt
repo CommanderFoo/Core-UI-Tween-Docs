@@ -15,7 +15,6 @@ Objects {
     }
   }
   ChildIds: 1009690180798178584
-  ChildIds: 5946284711204948175
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -28,38 +27,6 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
-  }
-}
-Objects {
-  Id: 5946284711204948175
-  Name: "UI Tween - Advanced Example [Lakwaai UI Kit]"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 12081523019534613418
-      value {
-        Overrides {
-          Name: "Name"
-          String: "UI Tween - Advanced Example [Lakwaai UI Kit]"
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 15695593463169600467
-    }
   }
 }
 Objects {

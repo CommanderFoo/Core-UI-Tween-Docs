@@ -574,4 +574,5 @@ Assets {
     }
   }
   SerializationVersion: 95
+  DirectlyPublished: true
 }

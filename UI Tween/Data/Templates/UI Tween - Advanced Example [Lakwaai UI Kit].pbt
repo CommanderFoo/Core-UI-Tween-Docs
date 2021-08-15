@@ -16,6 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
+        ChildIds: 11065380988906429515
         ChildIds: 5878126995221332248
         ChildIds: 9281786607157333525
         Collidable_v2 {
@@ -32,6 +33,39 @@ Assets {
         }
         Folder {
           IsGroup: true
+        }
+      }
+      Objects {
+        Id: 11065380988906429515
+        Name: "UI_Tween_READ_ME"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 12081523019534613418
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 6762083716211596179
+          }
         }
       }
       Objects {
@@ -16464,4 +16498,5 @@ Assets {
     }
   }
   SerializationVersion: 95
+  DirectlyPublished: true
 }

@@ -1,9 +1,8 @@
 Assets {
-  Id: 6762083716211596179
-  Name: "UI_Tween_READ_ME"
+  Id: 17041531197957346281
+  Name: "UI_Tween_Curve_Example_Client"
   PlatformAssetType: 3
   TextAsset {
   }
   SerializationVersion: 95
-  DirectlyPublished: true
 }
