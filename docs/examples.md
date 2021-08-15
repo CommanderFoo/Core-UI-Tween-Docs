@@ -12,16 +12,16 @@ id: examples
 
 	This template has 12 examples you can test in play mode by pressing the red buttons.
 
-	![Example 1](/media/example1.png)
+	![Example 1](../media/example1.png)
 
 2. **UI Tween - Advanced Example [Lakwaai UI Kit]**
 
 	This template uses the UI Kit by Lakwaai, and shows you how easy it is to get nice UI animations.
 
-	![Example 2](/media/example2.png)
+	![Example 2](../media/example2.png)
 
 3. **UI Tween - Curve Example**
 
 	This template shows you how a curve can be used to get some interesting animations.
 
-	![Example 3](/media/example3.png)
+	![Example 3](../media/example3.png)
