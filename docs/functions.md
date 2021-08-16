@@ -157,7 +157,7 @@ UI_Tween.move_y(obj, -100, 2)
 ```lua
 local obj = script:GetCustomProperty("obj")
 
-UI_Tween.move_y(obj, .75, 4, UI_Tween.Out_Bounce)
+UI_Tween.progress(obj, .75, 4, UI_Tween.Out_Bounce)
 ```
 
 ## Pulse
