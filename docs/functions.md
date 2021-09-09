@@ -150,6 +150,36 @@ local obj = script:GetCustomProperty("obj")
 UI_Tween.move_y(obj, -100, 2)
 ```
 
+## Move To
+
+`UI_Tween.move_to(obj, start_x, end_x, start_y, end_y, duration, easing, events)`
+
+```lua
+local obj = script:GetCustomProperty("obj")
+
+UI_Tween.move_to(obj, 100, 500, 400, 100, 2)
+```
+
+## Move To X
+
+`UI_Tween.move_to_x(obj, start_x, end_x, duration, easing, events)`
+
+```lua
+local obj = script:GetCustomProperty("obj")
+
+UI_Tween.move_to_x(obj, 700, -300, 2)
+```
+
+## Move To Y
+
+`UI_Tween.move_to_y(obj, start_y, end_y, duration, easing, events)`
+
+```lua
+local obj = script:GetCustomProperty("obj")
+
+UI_Tween.move_to_y(obj, 700, -300, 2)
+```
+
 ## Progress
 
 `UI_Tween.progress(obj, amount, duration, easing, events)`
@@ -220,6 +250,16 @@ local obj = script:GetCustomProperty("obj")
 UI_Tween.rotate_left(obj, 360, .6)
 ```
 
+## Rotate To
+
+`UI_Tween.rotate(obj, start_rotation, end_rotation, amount, duration, easing, events)`
+
+```lua
+local obj = script:GetCustomProperty("obj")
+
+UI_Tween.rotate_to(obj, 90, 30, .6)
+```
+
 ## Scale
 
 `UI_Tween.scale(obj, width, height, duration, easing, events)`
@@ -242,12 +282,42 @@ UI_Tween.scale_width(obj, 400, 1, UI_Tween.Out_Bounce)
 
 ## Scale Height
 
-`UI_Tween.scale_height(obj, width, duration, easing, events)`
+`UI_Tween.scale_height(obj, height, duration, easing, events)`
 
 ```lua
 local obj = script:GetCustomProperty("obj")
 
 UI_Tween.scale_height(obj, 400, 1, UI_Tween.Out_Bounce)
+```
+
+## Scale To
+
+`UI_Tween.scale_to(obj, start_width, end_width, start_height, end_height, duration, easing, events)`
+
+```lua
+local obj = script:GetCustomProperty("obj")
+
+UI_Tween.scale_to(obj, 60, 200, 60, 700, 1, UI_Tween.Out_Bounce)
+```
+
+## Scale To Width
+
+`UI_Tween.scale_to_width(obj, start_width, end_width, duration, easing, events)`
+
+```lua
+local obj = script:GetCustomProperty("obj")
+
+UI_Tween.scale_to_width(obj, 200, 400, 1, UI_Tween.Out_Bounce)
+```
+
+## Scale To Height
+
+`UI_Tween.scale_to_height(obj, start_height, end_height, duration, easing, events)`
+
+```lua
+local obj = script:GetCustomProperty("obj")
+
+UI_Tween.scale_to_height(obj, 200, 700, 1, UI_Tween.Out_Bounce)
 ```
 
 ## Shadow
