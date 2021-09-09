@@ -484,6 +484,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#move-to" class="md-nav__link">
+    Move To
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-to-x" class="md-nav__link">
+    Move To X
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-to-y" class="md-nav__link">
+    Move To Y
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#progress" class="md-nav__link">
     Progress
   </a>
@@ -526,6 +547,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rotate-to" class="md-nav__link">
+    Rotate To
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#scale" class="md-nav__link">
     Scale
   </a>
@@ -542,6 +570,27 @@
         <li class="md-nav__item">
   <a href="#scale-height" class="md-nav__link">
     Scale Height
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scale-to" class="md-nav__link">
+    Scale To
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scale-to-width" class="md-nav__link">
+    Scale To Width
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scale-to-height" class="md-nav__link">
+    Scale To Height
   </a>
   
 </li>
@@ -873,6 +922,24 @@
 <span class="linenos" data-linenos="2 "></span>
 <span class="linenos" data-linenos="3 "></span><span class="n">UI_Tween</span><span class="p">.</span><span class="n">move_y</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="move-to">Move To</h2>
+<p><code>UI_Tween.move_to(obj, start_x, end_x, start_y, end_y, duration, easing, events)</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">local</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">script</span><span class="p">:</span><span class="n">GetCustomProperty</span><span class="p">(</span><span class="s2">&quot;obj&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">UI_Tween</span><span class="p">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="move-to-x">Move To X</h2>
+<p><code>UI_Tween.move_to_x(obj, start_x, end_x, duration, easing, events)</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">local</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">script</span><span class="p">:</span><span class="n">GetCustomProperty</span><span class="p">(</span><span class="s2">&quot;obj&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">UI_Tween</span><span class="p">.</span><span class="n">move_to_x</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="o">-</span><span class="mi">300</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="move-to-y">Move To Y</h2>
+<p><code>UI_Tween.move_to_y(obj, start_y, end_y, duration, easing, events)</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">local</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">script</span><span class="p">:</span><span class="n">GetCustomProperty</span><span class="p">(</span><span class="s2">&quot;obj&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">UI_Tween</span><span class="p">.</span><span class="n">move_to_y</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="o">-</span><span class="mi">300</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="progress">Progress</h2>
 <p><code>UI_Tween.progress(obj, amount, duration, easing, events)</code></p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">local</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">script</span><span class="p">:</span><span class="n">GetCustomProperty</span><span class="p">(</span><span class="s2">&quot;obj&quot;</span><span class="p">)</span>
@@ -917,6 +984,12 @@
 <span class="linenos" data-linenos="2 "></span>
 <span class="linenos" data-linenos="3 "></span><span class="n">UI_Tween</span><span class="p">.</span><span class="n">rotate_left</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mf">.6</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="rotate-to">Rotate To</h2>
+<p><code>UI_Tween.rotate(obj, start_rotation, end_rotation, amount, duration, easing, events)</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">local</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">script</span><span class="p">:</span><span class="n">GetCustomProperty</span><span class="p">(</span><span class="s2">&quot;obj&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">UI_Tween</span><span class="p">.</span><span class="n">rotate_to</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">.6</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="scale">Scale</h2>
 <p><code>UI_Tween.scale(obj, width, height, duration, easing, events)</code></p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">local</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">script</span><span class="p">:</span><span class="n">GetCustomProperty</span><span class="p">(</span><span class="s2">&quot;obj&quot;</span><span class="p">)</span>
@@ -930,10 +1003,28 @@
 <span class="linenos" data-linenos="3 "></span><span class="n">UI_Tween</span><span class="p">.</span><span class="n">scale_width</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">UI_Tween</span><span class="p">.</span><span class="n">Out_Bounce</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="scale-height">Scale Height</h2>
-<p><code>UI_Tween.scale_height(obj, width, duration, easing, events)</code></p>
+<p><code>UI_Tween.scale_height(obj, height, duration, easing, events)</code></p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">local</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">script</span><span class="p">:</span><span class="n">GetCustomProperty</span><span class="p">(</span><span class="s2">&quot;obj&quot;</span><span class="p">)</span>
 <span class="linenos" data-linenos="2 "></span>
 <span class="linenos" data-linenos="3 "></span><span class="n">UI_Tween</span><span class="p">.</span><span class="n">scale_height</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">UI_Tween</span><span class="p">.</span><span class="n">Out_Bounce</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="scale-to">Scale To</h2>
+<p><code>UI_Tween.scale_to(obj, start_width, end_width, start_height, end_height, duration, easing, events)</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">local</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">script</span><span class="p">:</span><span class="n">GetCustomProperty</span><span class="p">(</span><span class="s2">&quot;obj&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">UI_Tween</span><span class="p">.</span><span class="n">scale_to</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">UI_Tween</span><span class="p">.</span><span class="n">Out_Bounce</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="scale-to-width">Scale To Width</h2>
+<p><code>UI_Tween.scale_to_width(obj, start_width, end_width, duration, easing, events)</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">local</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">script</span><span class="p">:</span><span class="n">GetCustomProperty</span><span class="p">(</span><span class="s2">&quot;obj&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">UI_Tween</span><span class="p">.</span><span class="n">scale_to_width</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">UI_Tween</span><span class="p">.</span><span class="n">Out_Bounce</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="scale-to-height">Scale To Height</h2>
+<p><code>UI_Tween.scale_to_height(obj, start_height, end_height, duration, easing, events)</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">local</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">script</span><span class="p">:</span><span class="n">GetCustomProperty</span><span class="p">(</span><span class="s2">&quot;obj&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">UI_Tween</span><span class="p">.</span><span class="n">scale_to_height</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">UI_Tween</span><span class="p">.</span><span class="n">Out_Bounce</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="shadow">Shadow</h2>
 <p><code>UI_Tween.shadow(obj, x_offset, y_offset, duration, easing, events)</code></p>
